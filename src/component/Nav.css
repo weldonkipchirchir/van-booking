@@ -1,0 +1,43 @@
+nav {
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo>a{
+    font-size: 25px;
+    color: black;
+    padding: 10px;
+}
+.logo>a:hover{
+    color: black;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links> a{
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    
+}
+
+.nav-links> a:hover{
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+  transition: border-bottom 0.3s ease; 
+}
+
+.y-link{
+  color: rgb(197, 30, 30);
+background-color: aqua;}

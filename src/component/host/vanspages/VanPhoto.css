@@ -1,0 +1,53 @@
+.container-vanphoto{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    width: 760px;
+    background-color: #FFF7ED;
+    color: black;
+    padding: 20px;
+}
+
+.inner-container{
+    display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.inner-container img{
+    width: 300px;
+  height: 250px;
+  border-radius: 5px;
+}
+.inner-container div{   
+     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+
+.back{
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  padding: 7px;
+  border-radius: 4px;
+  margin-top: 20px;
+  width: fit-content;
+  margin: 10px 0;
+}
+
+.arrow{
+  width: 30px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.back:hover{
+  background-color: #000000;
+  color: white;
+  box-shadow: 5px 5px 5px black;
+}

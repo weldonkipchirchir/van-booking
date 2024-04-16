@@ -1,0 +1,14 @@
+.container-price{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    width: 780px;
+    min-height: 80px;
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.container-text {
+    padding: 60px 0;
+}

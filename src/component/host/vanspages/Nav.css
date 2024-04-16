@@ -1,0 +1,17 @@
+.container-nav{
+    display: flex;
+    flex-direction: column;
+    width: 780px;
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.nav-container{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-container-link{
+padding: 10px;
+}

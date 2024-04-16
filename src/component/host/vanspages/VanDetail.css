@@ -1,0 +1,19 @@
+.container-vandetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    width: 780px;
+    /* min-height: 80vh; */
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.container-vandetail {
+    padding: 20px 10px;
+}
+
+.container-vandetail> p{
+  line-height: 1.5;
+}

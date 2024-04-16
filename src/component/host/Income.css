@@ -1,0 +1,57 @@
+.container-income{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    width: 780px;
+    min-height: 80vh;
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.transaction{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 5px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.income-header{
+    padding: 40px 0;
+}
+
+.income-header>h2{
+    font-size: 30px;
+}
+
+.income-header p{
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.transaction-container{
+  margin: 20px 0;
+}
+
+.transaction-single{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.transaction-single p{
+    text-decoration: underline;
+}
+
+.transaction-single-container{
+    gap: 10px;
+}
+
+.transaction-text{
+    font-weight: bold;
+}

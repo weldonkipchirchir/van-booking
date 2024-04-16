@@ -1,0 +1,54 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    width: 780px;
+    min-height: 80vh;
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.p1{
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.p3{
+    font-size: 17px;
+    /* margin-top: 10px; */
+}
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+margin-bottom: 10px;
+background-color: #FFCC8D;
+padding: 10px;
+border-radius: 4px;
+}
+
+.button-container > p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-container button{
+    background-color: black;
+    color: white ;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.vans-list{
+    margin-bottom: 10px;
+    background-color: #FFCC8D;
+    padding: 10px;
+    border-radius: 4px;
+}

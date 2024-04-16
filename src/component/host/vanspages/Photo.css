@@ -1,0 +1,16 @@
+.container-photos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    padding: 0 10px;
+    width: 780px;
+    background-color: #FFF7ED;
+    color: black;
+    margin: 0 auto;
+}
+
+.container-photos img{
+    width: 350px;
+  height: 350px;
+  border-radius: 5px;
+}
