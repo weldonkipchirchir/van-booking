@@ -26,7 +26,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/not-found" element={<NotFound />} />
             <Route path="/vans" element={<About />} />
             <Route path="/vans/vans-list" element={<VanList />} />
             <Route path="/vans/vans-list/:id" element={<VanDetails />} />
@@ -41,6 +40,7 @@ function App() {
                 <Route path="photos" element={<Photos />} />
               </Route>
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
