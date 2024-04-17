@@ -1,26 +1,32 @@
+
 import { useState, useEffect } from "react";
 import { NavLink, useSearchParams } from "react-router-dom";
-
+import { getVans } from "../utils/api";
 import "./VanList.css";
 
 function VanList() {
   const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/vans");
-        const data = await response.json();
-        setVans(data.vans);
-      } catch (error) {
-        console.log("Error fetching data:", error);
+        setLoading(true);
+        const data = await getVans();
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  const filteredVans = typeFilter
+  const filteredVans = vans && typeFilter
     ? vans.filter((van) => van.type === typeFilter)
     : vans;
 
@@ -54,41 +60,49 @@ function VanList() {
         >
           Rugged
         </button>
-        {typeFilter? (
+        {typeFilter ? (
           <button
             onClick={() => setSearchParams({})}
             style={!searchParams ? activeStyle : {}}
           >
             Clear filters
           </button>
-        ): null}
+        ) : null}
       </div>
       <div className="vans">
-        {vans.length > 0 ? (
-          <>
-            {filteredVans.map((van) => (
-              <div key={van.id} className="van-list-item">
-                <img src={van.imageUrl} alt={van.name} className="van-image" />
-                <div className="van-info">
-                  <h2>{van.name}</h2>
-                  <p className="p2">
-                    <span>
-                      <i>${van.price}</i>/day
-                    </span>
-                  </p>
-                </div>
-                <NavLink
-                  className="details"
-                  to={van.id}
-                  state={{ van }}
-                >
-                  View Details
-                </NavLink>
-              </div>
-            ))}
-          </>
+        {loading ? (
+          <h1>Loading...</h1>
+        ) : error ? (
+          <h1>There was an error: {error.message}</h1>
         ) : (
-          <h2>Loading...</h2>
+          <>
+            {filteredVans && filteredVans.length > 0 ? (
+              <>
+                {filteredVans.map((van) => (
+                  <div key={van.id} className="van-list-item">
+                    <img src={van.imageUrl} alt={van.name} className="van-image" />
+                    <div className="van-info">
+                      <h2>{van.name}</h2>
+                      <p className="p2">
+                        <span>
+                          <i>${van.price}</i>/day
+                        </span>
+                      </p>
+                    </div>
+                    <NavLink
+                      className="details"
+                      to={van.id}
+                      state={{ van, search: `?${searchParams.toString()}` }}
+                    >
+                      View Details
+                    </NavLink>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <h2>No vans found.</h2>
+            )}
+          </>
         )}
       </div>
     </div>
