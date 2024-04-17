@@ -20,7 +20,7 @@ function Vans() {
                     <section>
                         {vans.map(van => (
                             <NavLink
-                                to={`/host/vans/${van.id}`}
+                                to={van.id}
                                 state={{ van }}
                                 key={van.id}
                                 className="host-van-link-wrapper"
