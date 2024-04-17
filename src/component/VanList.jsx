@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 
 import "./VanList.css";
 
 function VanList() {
   const [vans, setVans] = useState([]);
-  const [selectedType, setSelectedType] = useState(null);
-
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,12 +20,8 @@ function VanList() {
     fetchData();
   }, []);
 
-  const handleTypeClick = (type) => {
-    setSelectedType(type);
-  };
-
-  const filteredVans = selectedType
-    ? vans.filter((van) => van.type === selectedType)
+  const filteredVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
     : vans;
 
   const activeStyle = {
@@ -40,34 +36,32 @@ function VanList() {
     <div className="container">
       <h1>Explore our van options</h1>
       <div className="filters">
-        <NavLink
-          to="/vans/vans-list"
-          style={selectedType === "simple" ? activeStyle : {}}
-          onClick={() => handleTypeClick("simple")}
+        <button
+          onClick={() => setSearchParams({ type: "simple" })}
+          style={searchParams === "simple" ? activeStyle : {}}
         >
           Simple
-        </NavLink>
-        <NavLink
-          to="/vans/vans-list"
-          style={selectedType === "luxury" ? activeStyle : {}}
-          onClick={() => handleTypeClick("luxury")}
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "luxury" })}
+          style={searchParams === "luxury" ? activeStyle : {}}
         >
           Luxury
-        </NavLink>
-        <NavLink
-          to="/vans/vans-list"
-          style={selectedType === "rugged" ? activeStyle : {}}
-          onClick={() => handleTypeClick("rugged")}
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "rugged" })}
+          style={searchParams === "rugged" ? activeStyle : {}}
         >
           Rugged
-        </NavLink>
-        <NavLink
-          to="/vans/vans-list"
-          style={!selectedType ? activeStyle : {}}
-          onClick={() => setSelectedType(null)}
-        >
-          Clear filters
-        </NavLink>
+        </button>
+        {typeFilter? (
+          <button
+            onClick={() => setSearchParams({})}
+            style={!searchParams ? activeStyle : {}}
+          >
+            Clear filters
+          </button>
+        ): null}
       </div>
       <div className="vans">
         {vans.length > 0 ? (
@@ -85,7 +79,7 @@ function VanList() {
                 </div>
                 <NavLink
                   className="details"
-                  to={`/vans/vans-list/${van.id}`}
+                  to={van.id}
                   state={{ van }}
                 >
                   View Details
