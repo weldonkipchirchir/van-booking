@@ -1,0 +1,59 @@
+.container-2fa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 80vh;
+    background-color: #fff7ed;
+    color: black;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .container-2fa h1{
+    margin: 40px 0;
+    font-size: 30px;
+    color: black;
+  }
+
+.form-container{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin: 50px auto;
+width: 80%;
+}
+
+form{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+  gap: 30px;
+}
+
+input{
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    color: black;
+}
+
+
+.twofa-link{
+    width: fit-content;
+    padding: 0 5px;
+    background-color: orange;
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+.twofa-link:hover{
+    box-shadow: 5px 5px 5px black;
+    color: white;
+}
