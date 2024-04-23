@@ -8,6 +8,7 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+	"vanlife/database"
 	"vanlife/middleware"
 
 	"github.com/gin-contrib/cors"
@@ -17,6 +18,10 @@ import (
 func main() {
 	router := gin.Default()
 
+	err := database.DBConnection()
+	if err != nil {
+		log.Fatalf("Error connecting to the database: %v", err)
+	}
 	//route limitter
 	limiter := middleware.NewRateLimiter(10, 20)
 	router.Use(limiter.Middleware())
@@ -64,6 +69,8 @@ func main() {
 	if err := serv.Shutdown(ctx); err != nil {
 		log.Fatal("Server forced to shutdown:", err)
 	}
+
+	database.DbDisconnect()
 
 	log.Println("Server exited")
 }
