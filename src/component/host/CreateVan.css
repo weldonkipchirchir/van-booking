@@ -1,0 +1,61 @@
+.container-book {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  background-color: #fff7ed;
+  color: black;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-book h1{
+  font-size: 25px;
+  background-color: orange;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  color: white;
+}
+
+.form-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  gap: 30px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 0 20px 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+input {
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 2px;
+  box-sizing: border-box;
+}
+
+.button-book {
+  width: fit-content;
+  padding: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-book input:focus {
+  border: orange;
+}

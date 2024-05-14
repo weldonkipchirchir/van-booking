@@ -1,71 +1,133 @@
 .container-signin {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    width: 780px;
-    min-height: 80vh;
-    background-color: #fff7ed;
-    color: black;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .container-signin h1{
-    margin: 40px 0;
-    font-size: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 80vh;
+  background-color: #fff7ed;
+  color: black;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-.form-container{
-    display: flex;
+.container-signin h1 {
+  margin: 40px 0;
+  font-size: 30px;
+}
+
+.form-container {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 50px;
   align-items: center;
   margin: 0 auto;
-width: 80%;
+  width: 80%;
+  color: black;
 }
 
-form{
-    display: flex;
+form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width:100%;
+  width: 100%;
   gap: 30px;
+  color: black;
 }
 
-input{
-    height: 40px;
-    background-color: white;
-    border-radius: 5px;
-    width: 90%;
+input {
+  height: 40px;
+  border-radius: 5px;
+  color: black;
+  width: 90%;
 }
 
-.form-input{
-display: flex;
-align-items: start;
-flex-direction: column;
-gap: 10px;
+.form-input {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
 }
 
-button{
-    width: 90%;
-    padding: 0 5px;
+button {
+  width: 100%;
+  padding: 0 5px;
 }
 
-.signup{
-    color: chocolate;
+.signup {
+  color: chocolate;
 }
 
 .checkbox-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.checkbox-container input {
+  width: 20px;
+}
+
+.password-input{
+  display: flex;
+  width: 100%;
+}
+
+.container-card{
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+  .container-card{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .container-card{
+    width: 290px;
+  }
+  form {
     gap: 10px;
-    flex-direction: row;
   }
-
-  .checkbox-container input{
-    width: 20px;
+  .container-signin h1 {
+    margin: 10px 0;
+    font-size: 20px;
   }
+  
+  .form-container {
+    gap: 20px;
+  
+  }
+  .container-card{
+    padding: 5px;
+  }
+  input {
+    height: 20px;
+    border-radius: 5px;
+    color: black;
+    width: 90%;
+  }
+}
 
+@media screen and (max-width:400px) {
+  .container-card{
+    width: 260px;
+  }
+}
+
+@media screen and (max-width:330px) {
+  .container-card{
+    width: 240px;
+  }
+}

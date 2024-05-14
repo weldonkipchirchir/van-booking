@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    padding: 0 10px;
-    width: 780px;
+    align-items: center;    
+    width: 100%;
     background-color: #FFF7ED;
     color: black;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 .container-photos img{

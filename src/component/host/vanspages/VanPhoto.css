@@ -1,11 +1,11 @@
 .container-vanphoto{
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
-    width: 760px;
+    width: 100%;
     background-color: #FFF7ED;
     color: black;
-    padding: 20px;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 .inner-container{
@@ -17,9 +17,9 @@
 }
 
 .inner-container img{
-    width: 300px;
-  height: 250px;
-  border-radius: 5px;
+  width: 50%;
+  height: 50%; 
+  object-fit: cover;
 }
 .inner-container div{   
      display: flex;
@@ -50,4 +50,9 @@
   background-color: #000000;
   color: white;
   box-shadow: 5px 5px 5px black;
+}
+
+.van-photo-info> h2{
+  margin: 0;
+  padding:  7px 7px 7px 0;
 }

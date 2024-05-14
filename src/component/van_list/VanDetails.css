@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10px;
-    width: 700px;
+    width: 80%;
     min-height: 80vh;
-    background-color: #FFF7ED;
+    background-color: white;
     color: black;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 h1{
@@ -16,14 +17,33 @@ h1{
 }
 
 img{
-    width: 100%;
-    height: 500px;
+    width: 30%;
+    height: 30%;
     object-fit: cover;
     margin-bottom: 10px;
 }
 
+@media screen and (max-width: 576px) {
+    img{
+        width: 70%;
+        height: 70%;
+    }
+    .back{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 876px) {
+    img{
+        width: 50%;
+        height: 50%;
+    }
+  
+}
+
+
 .b1{
-    background-color: chocolate;
+    background-color: orange;
     padding: 7px;
     border-radius: 4px;
     color: white;
@@ -32,7 +52,7 @@ img{
 }
 
 .b1:hover{
-    background-color: chocolate;
+    background-color: orange;
     color: white;
     box-shadow: 5px 5px 5px black;
 }
@@ -49,18 +69,20 @@ p{
 
 .rent{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 30px 0;    
+
 }
 
-.rent > button{
-    background-color: coral;
+.rent {
+    background-color: orange;
     color: white;
     padding: 7px;
     border-radius: 4px;
+    width: fit-content;
 }
 
-.rent > button :hover{
+.rent:hover{
     background-color: #000000;
     color: white;
     box-shadow: 5px 5px 5px black;
@@ -88,4 +110,26 @@ p{
     background-color: #000000;
     color: white;
     box-shadow: 5px 5px 5px black;
+}
+
+  
+@keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+.van-details-img{
+    display: flex;
+    justify-content: center;
+    animation: zoomIn 5s ease-in-out infinite alternate;
+    animation-delay: 2s;
+    animation-fill-mode: both;
 }

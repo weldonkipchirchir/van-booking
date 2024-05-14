@@ -3,7 +3,6 @@ package database
 import (
 	"context"
 	"log"
-	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -16,16 +15,14 @@ var (
 	DB     *mongo.Database
 )
 
-var dbUrl = os.Getenv("MONGO_URL")
-
 func DBConnection() error {
-	clientOptions := options.Client().ApplyURI(dbUrl)
+	clientOptions := options.Client().ApplyURI("mongodb+srv://weldonkipchirchir23:B7olZ9XQ6iGmD5S1@cluster0.b6j7yxf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	var err error
-	Client, err := mongo.Connect(ctx, clientOptions)
+	Client, err = mongo.Connect(ctx, clientOptions) // Fix: Remove Client declaration
 	if err != nil {
 		log.Fatal("Error connecting to the database")
 	}
@@ -33,7 +30,7 @@ func DBConnection() error {
 	// check connection
 	err = Client.Ping(ctx, nil)
 	if err != nil {
-		log.Fatal("Error pinging the MOngoDB")
+		log.Fatal("Error pinging the MongoDB")
 	}
 	log.Println("Successfully connected to the database")
 

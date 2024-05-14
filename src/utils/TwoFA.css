@@ -4,31 +4,31 @@
     justify-content: center;
     width: 100%;
     min-height: 80vh;
+    margin: 0 auto;
     background-color: #fff7ed;
     color: black;
-    margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    align-items: center;
   }
   
   .container-2fa h1{
     margin: 40px 0;
     font-size: 30px;
-    color: black;
   }
 
 .form-container{
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 50px;
   align-items: center;
   margin: 50px auto;
-width: 80%;
+  width: 100%;
 }
 
 form{
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   width:100%;
@@ -41,6 +41,7 @@ input{
     border-radius: 5px;
     width: 90%;
     color: black;
+    padding: 0 2px;
 }
 
 
@@ -56,4 +57,41 @@ input{
 .twofa-link:hover{
     box-shadow: 5px 5px 5px black;
     color: white;
+}
+
+.container-2fa p{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.container-card{
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px black;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container-card{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .container-card{
+    width: 290px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .container-card{
+    width: 260px;
+  }
+}
+
+@media screen and (max-width:330px) {
+  .container-card{
+    width: 240px;
+  }
 }

@@ -7,8 +7,8 @@ function Home() {
         <div className='p2'>
             <p>Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
         </div>
-        <div>
-            <button> <Link to='/vans'>Find your van</Link></button>
+        <div className='button'>
+            <button> <Link to='/vans' className='button-link'>Find your van</Link></button>
         </div>
     </div>
   )

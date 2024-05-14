@@ -1,0 +1,103 @@
+.container-booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  min-height: 100%;
+  background-color: #fff7ed;
+  color: black;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.star {
+  color: gold;
+}
+
+.booking-van {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  width: 50%;
+  margin: 10px 0;
+  gap: 20px;
+}
+
+.booking-van-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: fit-content;
+  /* background-color: white; */
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid #000;
+}
+
+.edit {
+  background-color: rgb(231, 171, 93);
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit:hover {
+  box-shadow: 5px 5px 5px black;
+}
+
+@media screen and (max-width: 600px) {
+  .booking-van-single {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .booking-van {
+    width: 90%;
+  }
+}
+
+.booking-details h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+.booking-details {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.booking-details p {
+  margin: 5px 0;
+  word-wrap: break-word;
+}
+
+.booking-details span {
+  font-weight: bold;
+}
+
+/* Add more styling as needed */
+.edit-container {
+  display: flex;
+  gap: 10px;
+}

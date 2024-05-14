@@ -11,7 +11,7 @@ function Pricing() {
   return (
     <div className="container-price">
         <div >
-          <p className="container-text">Price <b>${van.price}</b>/day</p>
+          <p className="container-text"><span>Price</span><br /> <b>${van.price}</b>/day</p>
         </div>
     </div>
   );

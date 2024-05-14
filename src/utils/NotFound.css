@@ -1,14 +1,12 @@
 .container-notfound {
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
-    width: 780px;
-    min-height: 80vh;
+    padding: 20px;
+    width: 100%;
+    margin: 80px auto 0;
+    min-height: calc(100vh - 80px);
     background-color: #fff7ed;
     color: black;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
     box-sizing: border-box;
   }
 
