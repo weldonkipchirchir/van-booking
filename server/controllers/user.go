@@ -1,11 +1,12 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
-	"time"
 	"vanlife/auth"
 	"vanlife/models"
 	"vanlife/services"
+	"vanlife/utils"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -56,9 +57,19 @@ func Login(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal Server Error"})
 		return
 	}
+	userIDString := user.ID.Hex()
 
-	token, refreshToken, err := auth.TokenGenerator(user.ID, user.Name, user.Email)
+	token, refreshToken, err := auth.TokenGenerator(userIDString, user.Name, user.Email, user.Role)
 	if err != nil {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "Internal server error"})
+		return
+	}
+
+	verificationCode := utils.GenerateVerification()
+	err = utils.SendEmail(verificationCode, user.Email, user.Name)
+
+	if err != nil {
+		fmt.Println("Error in gmail")
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "Internal server error"})
 		return
 	}
@@ -68,19 +79,18 @@ func Login(c *gin.Context) {
 		ID:    user.ID,
 		Name:  user.Name,
 		Email: user.Email,
+		Role:  user.Role,
 	}
 
 	res := gin.H{
-		"access_token":  token,
-		"refresh_token": refreshToken,
-		"user":          userResponse,
+		"access_token":      token,
+		"refresh_token":     refreshToken,
+		"user":              userResponse,
+		"verification_code": verificationCode,
 	}
 
 	// Include the "Login successful" message in the response
 	res["message"] = "Login successful"
-
-	c.SetCookie("token", token, int(time.Hour)*30, "/", "", false, true)
-	c.SetCookie("refreshToken", refreshToken, int(time.Hour)*90, "/", "", false, true)
 
 	// Send the combined JSON response to the client
 	c.JSON(http.StatusOK, res)
@@ -88,8 +98,5 @@ func Login(c *gin.Context) {
 
 // Logout function
 func Logout(c *gin.Context) {
-	// Clear cookies
-	c.SetCookie("token", "", -1, "/", "", false, true)
-	c.SetCookie("refreshToken", "", -1, "/", "", false, true)
 	c.JSON(http.StatusOK, gin.H{"message": "Logged out successfully"})
 }

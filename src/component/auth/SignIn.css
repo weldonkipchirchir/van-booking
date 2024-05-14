@@ -1,59 +1,101 @@
 .container-signin {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    width: 780px;
-    min-height: 80vh;
-    background-color: #fff7ed;
-    color: black;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .container-signin h1{
-    margin: 40px 0;
-    font-size: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 80vh;
+  background-color: #fff7ed;
+  color: black;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
 
-.form-container{
-    display: flex;
+.container-signin h1 {
+  margin: 40px 0;
+  font-size: 30px;
+}
+
+.form-container {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 50px;
   align-items: center;
   margin: 0 auto;
-width: 80%;
+  width: 80%;
 }
 
-form{
-    display: flex;
+form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width:100%;
+  width: 100%;
   gap: 30px;
 }
 
-input{
-    height: 40px;
-    background-color: white;
-    border-radius: 5px;
-    width: 90%;
+input {
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  width: 90%;
 }
 
-.form-input{
-display: flex;
-align-items: start;
-flex-direction: column;
-gap: 10px;
+.form-input {
+  display: flex;
+  align-items: start;
+  flex-direction: column; 
+  gap: 10px;
 }
 
-button{
-    width: 90%;
-    padding: 0 5px;
+button {
+  width: 100%;
+  padding: 0 5px;
 }
 
-.signup{
-    color: chocolate;
+.signup {
+  color: chocolate;
+}
+.password-input {
+  display: flex;
+  width: 100%;
+}
+
+.error {
+  color: red;
+}
+
+.container-card{
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px black;
+  width: 25%;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+  .container-card{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .container-card{
+    width: 290px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .container-card{
+    width: 260px;
+  }
+}
+
+@media screen and (max-width:330px) {
+  .container-card{
+    width: 240px;
+  }
 }

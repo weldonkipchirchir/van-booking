@@ -1,17 +1,18 @@
-.container-income{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10px;
-    width: 780px;
-    min-height: 80vh;
-    background-color: #FFF7ED;
-    color: black;
-    margin: 0 auto;
+.container-income {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+  min-height: 80vh;
+  margin: 0 auto;
+  background-color: #fff7ed;
+  color: black;
+  box-sizing: border-box;
 }
 
-.transaction{
-    display: flex;
+.transaction {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 5px;
@@ -20,38 +21,38 @@
   border-radius: 10px;
 }
 
-.income-header{
-    padding: 40px 0;
+.income-header {
+  padding: 40px 0;
 }
 
-.income-header>h2{
-    font-size: 30px;
+.income-header > h2 {
+  font-size: 30px;
 }
 
-.income-header p{
+.income-header p {
   margin: 20px 0;
-  text-decoration: underline;
+  text-decoration: underline;padding-left: 5px;
 }
 
-.transaction-container{
+.transaction-container {
   margin: 20px 0;
 }
 
-.transaction-single{
-    display: flex;
+.transaction-single {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
 }
-.transaction-single p{
-    text-decoration: underline;
+.transaction-single p {
+  text-decoration: underline;
 }
 
-.transaction-single-container{
-    gap: 10px;
+.transaction-single-container {
+  gap: 10px;
 }
 
-.transaction-text{
-    font-weight: bold;
+.transaction-text {
+  font-weight: bold;
 }

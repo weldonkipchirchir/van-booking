@@ -1,12 +1,12 @@
 .container-dashboard {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
-  width: 780px;
+  width: 100%;
+  padding: 0 20px;
   min-height: 80vh;
+  margin: 0 auto;
   background-color: #fff7ed;
   color: black;
-  margin: 0 auto;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -36,74 +36,105 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 5px 0;
+  box-sizing: border-box;
+  padding: 20px;
   background-color: white;
   border-radius: 5px;
 }
 
-.dashboard-image-container {
+.containner-inner > h3,
+h2 {
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .dashbaord-van-single {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .dashboard-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .dashboard-details > h1 {
+    display: flex;
+    justify-content: start;
+    font-size: 25px;
+  }
+  .dashboard-details > p {
+    font-size: 25px;
+  }
+
+  .dashboard-image-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dashbaord-van-head {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-.dashboard-container{
-    display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 15px;
-  width: 100%;
-}
-
-.dashbaord-van-head{
-    display: flex;
   justify-content: space-between;
   margin: 25px 0;
   align-items: center;
 }
 
-.dashbaord-van-score{
-    display: flex;
+.dashbaord-van-score {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 0 25px 0 ;
+  margin: 0 0 25px 0;
   background-color: rgb(241, 194, 133);
   border-radius: 0 0 5px 5px;
   padding: 25px 10px;
 }
 
-.dashbaord-van-score-inner{
-    display: flex;
+.dashbaord-van-score-inner {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.containner-inner{
-    padding: 40px 0px;
-    background-color: rgb(238, 208, 167);
-    width: 100%;
+.containner-inner {
+  padding: 20px 0px;
+  background-color: rgb(238, 208, 167);
+  width: 100%;
+  border-radius: 3px;
 }
-.containner-inner>h2{
-    font-size: 30px;
+.containner-inner > h2 {
+  font-size: 30px;
 }
-.containner-inner>h3{
-    font-size: 40px;
+.containner-inner > h3 {
+  font-size: 25px;
 }
 
-.container-innner-innner{
-    display: flex;
+.container-innner-innner {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 10px;
+  align-items: center;
 }
 
-.edit{
-background-color: rgb(231, 171, 93);
-  padding: 10px;
+.edit {
+  background-color: orange;
+  text-align: center;
   border-radius: 4px;
+}
+.edit:hover {
+  box-shadow: 5px 5px 5px black;
   color: white;
 }
-.edit:hover{
-box-shadow: 5px 5px 5px black;
+
+.delete-button {
+  padding: 10px;
+  background-color: orange;
+}
+
+.edit-button {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

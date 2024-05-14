@@ -1,14 +1,20 @@
 .container-price{
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
-    width: 780px;
+    width: 100%;
+    margin: 0 auto;
     min-height: 80px;
     background-color: #FFF7ED;
     color: black;
-    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 .container-text {
     padding: 60px 0;
+}
+
+.container-text> span{
+    font-weight: bold;
+    font-size: 25px;
 }

@@ -1,8 +1,0 @@
-export const complaintsData = [
-  { complaint: 'June', count: 3990 },
-  { complaint: 'August', count: 1300 },
-  { complaint: 'September', count: 3000 },
-  { complaint: 'October', count: 2600 },
-  { complaint: 'November', count: 1400 },
-  { complaint: 'December', count: 500 },
-];

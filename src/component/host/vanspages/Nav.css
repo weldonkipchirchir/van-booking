@@ -1,10 +1,11 @@
 .container-nav{
     display: flex;
     flex-direction: column;
-    width: 780px;
+    width: 100%;
     background-color: #FFF7ED;
     color: black;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .nav-container{

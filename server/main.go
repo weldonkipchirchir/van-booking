@@ -10,6 +10,7 @@ import (
 	"time"
 	"vanlife/database"
 	"vanlife/middleware"
+	"vanlife/routes"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -43,6 +44,10 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	routes.SetUpUsers(router)
+	routes.VansRoutes(router)
+	routes.BookingRoutes(router)
 
 	//create a server
 	serv := &http.Server{

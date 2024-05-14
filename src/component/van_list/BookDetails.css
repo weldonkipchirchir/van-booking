@@ -1,0 +1,75 @@
+.container-book {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  gap: 30px;
+  width: 80%;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+input {
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  width: 90%;
+  padding-left: 2px;
+  box-sizing: border-box;
+}
+
+.button-book {
+  width: fit-content;
+  padding: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-book input:focus {
+  border-color: orange; /* Changed from border to border-color */
+}
+
+@media screen and (max-width: 500px) {
+  .form-book {
+    max-width: 300px; /* Adjusting max-width for smaller screens */
+  }
+  
+  input {
+    width: 100%; /* Making inputs full width on smaller screens */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1{
+    font-size: 30px;
+  }
+  .form-book {
+    max-width: 150px;
+  }
+  
+  input {
+    width: 100%; /* Making inputs full width on smaller screens */
+  }
+}

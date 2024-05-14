@@ -24,12 +24,22 @@ a:hover {
 
 body {
   margin: 0 auto;
-  min-width: 320px;
+  min-width: 300px;
   min-height: 100vh;
-  max-width: 800px;
-  position: relative;
+  max-width: 1700px;
+  /* position: relative; */
+  background-color: white;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .app{
   /* position: relative; */
+}
+
+button{
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: orange;
+  color: black;
 }

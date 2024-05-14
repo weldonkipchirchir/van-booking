@@ -1,0 +1,17 @@
+  .hostnav-links{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hostnav-container{
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hostnav-links > a {
+    padding: 7px;
+    font-size: 20px;
+    color: #000;
+  }
+  
+  

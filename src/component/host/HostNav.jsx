@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import './HostNav.css'
 function HostNav() {
   const links = [
     {
@@ -17,6 +18,14 @@ function HostNav() {
       link: "income",
       name: "Income",
     },
+    {
+      link: "create",
+      name: "create",
+    },
+    {
+      link: "bookings",
+      name: "bookings",
+    },
   ];
 
   const activeState = ({ isActive, isPending }) => {
@@ -30,8 +39,8 @@ function HostNav() {
   };
 
   return (
-    <nav>
-      <div className="nav-links">
+    <nav className="hostnav-container">
+      <div className="hostnav-links">
         {links.map((link, key) => (
           <NavLink
             key={key}

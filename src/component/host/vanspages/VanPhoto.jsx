@@ -1,21 +1,17 @@
-import { useEffect, useState } from "react"
-import { useParams, Link } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
 import './VanPhoto.css'
 import { IoArrowBackSharp } from "react-icons/io5";
+import { getHostVanId } from '../../../utils/api';
+export  function loader({params}){
+  return getHostVanId(params.vanId)
+}
 
 function VanPhoto() {
-  const { vanId } = useParams();
-  const [van, setVan] = useState([])
+ 
+const van = useLoaderData();
 
-  useEffect(() => {
-    fetch(`/api/host/vans/${vanId}`)
-    .then(res => res.json())
-    .then(data => {
-      setVan(data.vans);
-    })
-  }, [vanId]);
-  
   return (
+    <> 
     <div className="container-vanphoto">
       <Link className='back' to='/host/vans'><IoArrowBackSharp className="arrow"/>Back to all vans</Link>
       <div >
@@ -31,6 +27,8 @@ function VanPhoto() {
         ))}
       </div>
     </div>
+    <Outlet/>
+    </>
   );
 }
 

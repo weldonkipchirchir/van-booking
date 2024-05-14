@@ -5,23 +5,24 @@ import (
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type SignedDetails struct {
 	Name  string
-	Id    primitive.ObjectID
+	Id    string
 	Email string
+	Role  string
 	jwt.StandardClaims
 }
 
 var secretKey = os.Getenv("SECRET_KEY")
 
-func TokenGenerator(id primitive.ObjectID, name string, email string) (token string, refreshToken string, err error) {
+func TokenGenerator(id string, name string, email string, role string) (token string, refreshToken string, err error) {
 	claims := SignedDetails{
 		Email: email,
 		Name:  name,
 		Id:    id,
+		Role:  role,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: time.Now().Add(time.Hour * 72).Unix(),
 			Issuer:    "microservice",
@@ -33,6 +34,7 @@ func TokenGenerator(id primitive.ObjectID, name string, email string) (token str
 		Email: email,
 		Name:  name,
 		Id:    id,
+		Role:  role,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: time.Now().Add(time.Hour * 144).Unix(),
 			Issuer:    "microservice",
